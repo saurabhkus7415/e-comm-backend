@@ -9,6 +9,7 @@ app.post("/register", async (req, resp) => {
   let user = new User(req.body);
   let result = await user.save();
   // for added line to remove password
+  // for added line to remove password
   result = result.toObject();
   delete result.password;
   resp.send(result);
